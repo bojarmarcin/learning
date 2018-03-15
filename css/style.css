@@ -1,21 +1,173 @@
-body { background: #bf4c4c; }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+* { box-sizing: border-box; text-align: center; }
 
-/* slider
-----------------------*/
-.slide-wrap { margin: 5% auto 0; width: 50%; }
+body { margin: 0; font-family: "Quicksand"; }
 
-.slide-mask { position: relative; overflow: hidden; height: 130px; }
+/* clearfix hack */
+.row:before, .row:after { content: " "; /* 1 */ display: table; /* 2 */ }
 
-.slide-group { position: absolute; top: 0px; left: 0; width: 100%; }
+.row:after { clear: both; }
 
-.slide { height: 130px; font: 100 90px/135px "lato"; font-size: 2em; color: #fff; text-align: center; text-transform: uppercase; }
+/* GRID */
+[class*="col-"] { float: left; min-height: 1px; padding: 12px; width: 100%; }
 
-/* nav
-----------------------*/
-.slide-nav { text-align: center; }
+.col-1 { width: 8.33%; }
 
-.slide-nav ul { margin: 0; padding: 0; }
+.col-2 { width: 16.66%; }
 
-.slide-nav li { display: inline-block; width: 10px; height: 10px; background: #af3838; cursor: pointer; margin-left: .5em; }
+.col-3 { width: 25%; }
 
-.slide-nav li.current { background: #902727; }
+.col-4 { width: 33.33%; }
+
+.col-5 { width: 41.66%; }
+
+.col-6 { width: 50%; }
+
+.col-7 { width: 58.33%; }
+
+.col-8 { width: 66.66%; }
+
+.col-9 { width: 75%; }
+
+.col-10 { width: 83.33%; }
+
+.col-11 { width: 91.66%; }
+
+.col-12 { width: 100%; }
+
+.col-offset-1 { margin-left: 8.33%; }
+
+.col-offset-2 { margin-left: 16.66%; }
+
+.col-offset-3 { margin-left: 25%; }
+
+.col-offset-4 { margin-left: 33.33%; }
+
+.col-offset-5 { margin-left: 41.66%; }
+
+.col-offset-6 { margin-left: 50%; }
+
+.col-offset-7 { margin-left: 58.33%; }
+
+.col-offset-8 { margin-left: 66.66%; }
+
+.col-offset-9 { margin-left: 75%; }
+
+.col-offset-10 { margin-left: 83.33%; }
+
+.col-offset-11 { margin-left: 91.66%; }
+
+.col-offset-12 { margin-left: 100%; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; }
+
+/* HEADER */
+header { background-color: #313234; height: 80px; }
+
+header .logo { width: 200px; height: 80px; padding: 10px 0; }
+
+header ul { float: right; margin: 0; padding: 0; list-style-type: none; }
+
+header li { display: inline-block; }
+
+header a { line-height: 80px; display: block; color: #fff; padding: 0 20px; text-decoration: none; text-transform: uppercase; }
+
+header a:hover { background: #ccc; }
+
+/* HERO */
+.hero { width: 100%; height: 700px; padding: 42vh 0 0 0; text-align: center; background-image: url(http://kodilla.com/static/lessons/blue-mountain.jpg); background-size: cover; background-position: center; overflow: hidden; position: relative; }
+
+.hero .slogan { font-size: 40px; max-width: 800px; background-color: rgba(112, 128, 128, 0.5); text-align: center; position: absolute; top: 50%; right: 0; color: #FFFFFF; }
+
+.main:hover { color: lightblue; }
+
+.main .fa { font-size: 60px; margin: 50px auto; }
+
+.gallery .layer { position: relative; width: 25%; margin: 0; padding: 0; }
+
+.gallery .layer:hover .image { opacity: 0.3; }
+
+.gallery .layer:hover .middle { opacity: 1; }
+
+.gallery .image { opacity: 1; display: block; width: 100%; height: auto; transition: .5s ease; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+
+.gallery .middle { transition: .5s ease; opacity: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); text-align: center; }
+
+.gallery .buttons { color: #FFFFFF; font-size: 16px; padding: 16px 32px; }
+
+.gallery button { height: 40px; width: 40px; margin: 10px; }
+
+.gallery .fa { font-size: 30px; }
+
+.team { position: relative; width: 25%; }
+
+.team:hover .overlay { opacity: 1; }
+
+.team .image2 { display: block; width: 100%; height: auto; height: 250px; width: 250px; border-radius: 50%; }
+
+.team .overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; height: 100%; width: 100%; opacity: 0; transition: .5s ease; background-color: rgba(255, 255, 255, 0.5); }
+
+.team .text { color: black; font-size: 20px; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); text-align: center; }
+
+.counter h3 { color: #0078ff; }
+
+.about { background-color: #505050; color: #FFFFFF; }
+
+.about button { background-color: #004feb; color: #FFFFFF; border-style: none; }
+
+.about button:hover { background-color: #FFFFFF; color: #004feb; }
+
+.about .fa { font-size: 35px; }
+
+.copy { background-color: #313234; color: #FFFFFF; }
+
+@media (max-width: 767px) { .col-s-1 { width: 8.33%; }
+  .col-s-2 { width: 16.66%; }
+  .col-s-3 { width: 25%; }
+  .col-s-4 { width: 33.33%; }
+  .col-s-5 { width: 41.66%; }
+  .col-s-6 { width: 50%; }
+  .col-s-7 { width: 58.33%; }
+  .col-s-8 { width: 66.66%; }
+  .col-s-9 { width: 75%; }
+  .col-s-10 { width: 83.33%; }
+  .col-s-11 { width: 91.66%; }
+  .col-s-12 { width: 100%; }
+  .container { width: 100%; }
+  header { height: 600px; }
+  header img { display: block; margin: 0 auto; }
+  header ul { float: none; text-align: center; }
+  header li { display: block; text-align: center; float: none; }
+  .hero .slogan { font-size: 20px; max-width: 300px; top: 50%; }
+  .team .overlay { opacity: 1; }
+  .team .image2 { float: none; display: block; margin: 0 auto; margin-top: 0px; }
+  .layer .middle { opacity: 1; }
+  .layer button { height: 20px; width: 20px; }
+  .layer .fa { font-size: 12px; }
+  .image3 { width: 100%; float: none; display: block; margin: 0 auto; margin-top: 0px; } }
+
+@media (min-width: 768px) and (max-width: 1199px) { .col-m-1 { width: 8.33%; }
+  .col-m-2 { width: 16.66%; }
+  .col-m-3 { width: 25%; }
+  .col-m-4 { width: 33.33%; }
+  .col-m-5 { width: 41.66%; }
+  .col-m-6 { width: 50%; }
+  .col-m-7 { width: 58.33%; }
+  .col-m-8 { width: 66.66%; }
+  .col-m-9 { width: 75%; }
+  .col-m-10 { width: 83.33%; }
+  .col-m-11 { width: 91.66%; }
+  .col-m-12 { width: 100%; }
+  .container { width: 100%; }
+  header { height: 600px; }
+  header img { display: block; margin: 0 auto; }
+  header ul { float: none; text-align: center; }
+  header li { display: block; text-align: center; float: none; }
+  .hero .slogan { font-size: 20px; max-width: 300px; top: 60%; }
+  .team .overlay { opacity: 1; }
+  .team .image2 { float: none; display: block; margin: 0 auto; margin-top: 0px; }
+  .layer .middle { opacity: 1; }
+  .layer button { height: 30px; width: 30px; }
+  .layer .fa { font-size: 18px; }
+  .image3 { width: 100%; float: none; display: block; margin: 0 auto; margin-top: 0px; } }
