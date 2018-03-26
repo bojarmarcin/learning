@@ -28,7 +28,7 @@
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "npm run onchange",
     "watch:browser-sync": "browser-sync start --server --files css/style.css index.html",
-    "onchange": "onchange -d 100 css/style.css -- npm-run-all sassprefixer:*",
+    "onchange": "onchange -d 100 sass/ -- npm-run-all sassprefixer:*",
     "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "sassprefixer:autoprefixer": "autoprefixer-cli -o css/style.prefixed.css css/style.css"
   },
